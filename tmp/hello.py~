@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import pygtk
+pygtk.require('2.0')
+import gtk
+
+builder = gtk.Builder()
+builder.add_from_file('window.ui')
+
+
+class Hello(object):
+    def __init__(self):
+        builder.connect_signals(self)
+        self.window = builder.get_object('window1')
+        self.text = builder.get_object('entry1')
+        self.text.connect("activate", self.say_hello)
+        self.window.show_all()
+
+    def say_hello(self, sender):
+        print "Hello %s" % self.text.get_text()
+
+    def destroy_app(self, sender):
+        gtk.main_quit()
+
+if __name__ == "__main__":
+    app = Hello()
+    gtk.main()

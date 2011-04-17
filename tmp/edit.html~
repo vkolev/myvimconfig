@@ -1,0 +1,14 @@
+  <html>
+    <head>
+      <title>{{page_name}} - Edit</title>
+    </head>
+
+    <body>
+      <h1>Editing {{page_name}}</h1>
+      <form method="POST" action="wikicamp/{{page_name}}/save/">
+        <textarea name="content" rows="20" cols="40">{{content}}</textarea>
+        <br />
+        <input type="submit" value="Save page">
+        </form>
+    </body>
+  </html>
