@@ -59,8 +59,9 @@ if has("autocmd")
   filetype plugin on
 endif
 
-let g:pydiction_location = '/home/vladi/.vim/after/plugin/complete-dict'
-
+let twitvim_browser_cmd = 'google-chrome'
+set ofu=syntaxcomplete#Complete
+set completeopt=longest,menuone
 " Set coloscheme to molokai and fix colors when in terminal
 colorscheme github
 set t_Co=256
@@ -145,7 +146,7 @@ if has("autocmd")
     autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType python runtime! autoload/pythoncomplete.vim
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType c set omnifunc=ccomplete#Complete
 
